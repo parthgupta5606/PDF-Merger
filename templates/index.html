@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDF Merger</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>PDF Merger</h1>
+
+        <p class="subtitle">
+            Upload multiple PDFs and select exactly which pages you want to merge.
+        </p>
+
+
+        <form
+            action="/merge"
+            method="POST"
+            enctype="multipart/form-data"
+            id="mergeForm"
+        >
+
+            <!-- Upload Section -->
+
+            <div class="upload-box">
+
+                <input
+                    type="file"
+                    id="pdfInput"
+                    name="pdfs"
+                    accept=".pdf"
+                    multiple
+                >
+
+                <label for="pdfInput" class="upload-button">
+                    + Add PDF Files
+                </label>
+
+                <p>
+                    Choose multiple PDF files from your computer
+                </p>
+
+            </div>
+
+
+            <!-- Selected PDFs -->
+
+            <div id="pdfList"></div>
+
+
+            <button type="submit" id="mergeButton">
+                Merge PDFs
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
