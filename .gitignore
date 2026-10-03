@@ -1,0 +1,15 @@
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.venv/
+
+# Temporary uploaded and generated PDFs
+uploads/*
+!uploads/.gitkeep
+
+# Environment variables
+.env
